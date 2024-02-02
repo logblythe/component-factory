@@ -17,7 +17,7 @@ import { RenderNode } from "./editor/render-node";
 import SidePanel from "./editor/SidePanel";
 import { SidePanelToggler } from "./editor/SidePanel/side-panel-toggler";
 import { Container } from "./components/user/static-container";
-import { Header } from "./editor/header";
+import { Header } from "./editor/static-header";
 
 export default function Page(): JSX.Element {
   const ref = useRef<HTMLDivElement | null>(null);
