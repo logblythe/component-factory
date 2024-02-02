@@ -2,7 +2,7 @@
 import type { Node } from "@craftjs/core";
 import React from "react";
 import { Button } from "../button";
-import { Resizer } from "../resizer";
+import { Resizer } from "../static-resizer";
 import { Text } from "../text";
 import { Settings } from "./settings";
 
