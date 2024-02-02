@@ -2,13 +2,6 @@ import { useNode } from "@craftjs/core";
 import type { Responsive } from "@radix-ui/themes";
 import { Flex as RadixFlex } from "@radix-ui/themes";
 import cx from "classnames";
-import { Settings } from "./resizable-container/settings";
-
-// TODO: Figure out how to type this
-// type PropType = React.ComponentProps<typeof RadixFlex> & {
-//   className?: string;
-//   children?: React.ReactNode;
-// };
 
 interface PropType {
   className?: string;
@@ -22,13 +15,12 @@ const defaultProps: Partial<PropType> = {
 };
 
 export function Container(props: Partial<PropType>): React.JSX.Element {
-  // eslint-disable-next-line no-param-reassign -- needs to be reassigned
-  props = {
+  const allProps = {
     ...defaultProps,
     ...props,
   };
 
-  const { children, className, ...rest } = props;
+  const { children, className, ...rest } = allProps;
 
   const {
     connectors: { connect, drag },
@@ -59,7 +51,7 @@ Container.craft = {
     //   return true;
     // },
   },
-  related: {
-    settings: Settings,
-  },
+  // related: {
+  //   settings: Settings,
+  // },
 };

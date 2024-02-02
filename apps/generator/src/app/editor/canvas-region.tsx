@@ -10,7 +10,7 @@ const CanvasRegion = forwardRef<HTMLDivElement>((_, ref) => {
           background={{ r: 255, g: 255, b: 255, a: 1 }}
           canvas
           custom={{ displayName: "App" }}
-          height="100%"
+          height="90vh"
           is={ResizableContainer}
           padding={["40", "40", "40", "40"]}
           width="auto"

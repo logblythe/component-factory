@@ -1,7 +1,7 @@
 import { Element } from "@craftjs/core";
 import { Box } from "@radix-ui/themes";
 import React from "react";
-import { Container } from "../../index";
+import { Container } from "../../static-container";
 
 export function OneHalfColumns(): React.JSX.Element {
   return (

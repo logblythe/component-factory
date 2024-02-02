@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions -- need to fix*/
 import type { Node } from "@craftjs/core";
 import React from "react";
 import { Button } from "../button";
@@ -52,8 +53,8 @@ export function ResizableContainer(
     alignItems,
     justifyContent,
     fillSpace,
-    // background,
-    // color,
+    background,
+    color,
     padding,
     margin,
     shadow,
@@ -67,10 +68,8 @@ export function ResizableContainer(
         justifyContent,
         flexDirection,
         alignItems,
-        // background: background
-        //   ? `rgba(${Object.values(background)})`
-        //   : undefined,
-        // color: color ? `rgba(${Object.values(color)})` : undefined,
+        background: `rgba(${Object.values(background)})`,
+        color: `rgba(${Object.values(color)})`,
         padding: `${padding[0]}px ${padding[1]}px ${padding[2]}px ${padding[3]}px`,
         margin: `${margin[0]}px ${margin[1]}px ${margin[2]}px ${margin[3]}px`,
         boxShadow:

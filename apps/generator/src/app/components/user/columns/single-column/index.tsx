@@ -1,6 +1,6 @@
 import { Element } from "@craftjs/core";
 import React from "react";
-import { Container } from "../../index";
+import { Container } from "../../static-container";
 
 export function SingleColumn(): React.JSX.Element {
   return (

@@ -1,7 +1,7 @@
 import { Element, useEditor } from "@craftjs/core";
 import { Button as RadixButton } from "@radix-ui/themes";
 import React from "react";
-import { Container } from "../../user";
+import { Container } from "../../user/static-container";
 
 export function ContainerGenerator(): React.JSX.Element {
   const {

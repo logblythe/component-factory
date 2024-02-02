@@ -1,11 +1,10 @@
 import { useNode } from "@craftjs/core";
-import { Button as RadixButton } from "@radix-ui/themes";
 import React from "react";
 import { Text } from "../text";
 import type { StyleProps } from "../types";
 import { Settings } from "./settings";
 
-export type PropTypes = React.ComponentProps<typeof RadixButton> &
+export type PropTypes = React.ComponentProps<"button"> &
   StyleProps & {
     text: string;
   };
@@ -28,7 +27,7 @@ export function Button({ text, ...rest }: PropTypes): React.JSX.Element {
   } = rest;
 
   return (
-    <RadixButton
+    <button
       ref={(ref) => connect(drag(ref as HTMLElement))}
       style={{
         borderRadius: `${borderRadius}px`,
@@ -43,10 +42,11 @@ export function Button({ text, ...rest }: PropTypes): React.JSX.Element {
         fontWeight,
         maxWidth: "max-content",
       }}
+      type="button"
       {...otherProps}
     >
       <Text text={text} />
-    </RadixButton>
+    </button>
   );
 }
 
