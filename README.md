@@ -1,14 +1,6 @@
-# Turborepo Tailwind CSS starter
+# Component Factory
 
-This is an official starter Turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest -e with-tailwind
-```
+This is a Turborepo built to create the components and preview them.
 
 ## What's inside?
 
@@ -23,6 +15,44 @@ This Turborepo includes the following packages/apps:
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+
+You can run `turbo run dev` command to start the development for all the applications or you can individually build the applications, the instructions are given below:
+
+### Building apps/generator
+
+You can run the development server for the **generator** app in the following ways.
+
+- #### Using turbo cli
+
+```
+turbo run dev --filter generator
+```
+
+- #### Using yarn
+
+In your terminal, navigate to `app/generator` and run the following command
+
+```
+yarn dev
+```
+
+### Building apps/viewer
+
+You can run the development server for the **viewer** app in the following ways.
+
+- #### Using turbo cli
+
+```
+turbo run dev --filter viewer
+```
+
+- #### Using yarn
+
+In your terminal, navigate to `app/viewer` and run the following command
+
+```
+yarn dev
+```
 
 ### Building packages/ui
 
