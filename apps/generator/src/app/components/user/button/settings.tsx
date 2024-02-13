@@ -1,107 +1,59 @@
-import { useNode } from "@craftjs/core";
-import { Box, Flex, Select, Slider, Text, TextField } from "@radix-ui/themes";
-import type { PropTypes } from "./index";
+import { Box } from "@radix-ui/themes";
+import { SettingItem } from "../../settings/item";
 
-export function Settings(): JSX.Element {
-  const {
-    actions: { setProp },
-  } = useNode((node) => ({
-    props: node.data.props,
-  }));
-
+export function Settings(): React.ReactElement {
   return (
     <Box>
-      <Text>Font Size</Text>
-      <Flex direction="column">
-        <Slider
-          defaultValue={[18]}
-          onValueChange={(value) => {
-            setProp((props: PropTypes) => (props.fontSize = String(value[0])));
-          }}
-        />
-      </Flex>
-      <Text>Border Radius</Text>
-      <TextField.Root>
-        <TextField.Input
-          onChange={(e) => {
-            const value = e.target.value;
-            setProp((props: PropTypes) => (props.borderRadius = value));
-          }}
-          placeholder="Border radius"
-          type="number"
-        />
-      </TextField.Root>
-      <Text>Text Color</Text>
-      <TextField.Root>
-        <TextField.Input
-          onChange={(e) => {
-            const value = e.target.value;
-            setProp((props: PropTypes) => (props.textColor = value));
-          }}
-          placeholder="Text color"
-          type="color"
-        />
-      </TextField.Root>
-
-      <Text>Background Color</Text>
-      <TextField.Root>
-        <TextField.Input
-          onChange={(e) => {
-            const value = e.target.value;
-            setProp((props: PropTypes) => (props.backgroundColor = value));
-          }}
-          placeholder="Background color"
-          type="color"
-        />
-      </TextField.Root>
-      <Text>Border Color</Text>
-      <TextField.Root>
-        <TextField.Input
-          onChange={(e) => {
-            const value = e.target.value;
-            setProp((props: PropTypes) => (props.borderColor = value));
-          }}
-          placeholder="Border color"
-          type="color"
-        />
-      </TextField.Root>
-      <Text>Padding x-axis</Text>
-      <TextField.Root>
-        <TextField.Input
-          onChange={(e) => {
-            const value = e.target.value;
-            setProp((props: PropTypes) => (props.paddingX = value));
-          }}
-          placeholder="Padding top"
-          type="number"
-        />
-      </TextField.Root>
-      <Text>Padding y-axis</Text>
-      <TextField.Root>
-        <TextField.Input
-          onChange={(e) => {
-            const value = e.target.value;
-            setProp((props: PropTypes) => (props.paddingY = value));
-          }}
-          placeholder="Padding right"
-          type="number"
-        />
-      </TextField.Root>
-      <Select.Root
-        defaultValue="400"
-        onValueChange={(value) => {
-          setProp((props: PropTypes) => (props.fontWeight = value));
-        }}
-      >
-        <Select.Trigger />
-        <Select.Content>
-          <Select.Group>
-            <Select.Item value="400">Default</Select.Item>
-            <Select.Item value="500">Medium</Select.Item>
-            <Select.Item value="600">Bold</Select.Item>
-          </Select.Group>
-        </Select.Content>
-      </Select.Root>
+      <SettingItem
+        defaultValue={16}
+        inputType="slider"
+        label="Font Size"
+        propKey="fontSize"
+      />
+      <SettingItem
+        inputType="number"
+        label="Border Radius"
+        propKey="borderRadius"
+      />
+      <SettingItem
+        inputType="number"
+        label="Line Height"
+        propKey="lineHeight"
+      />
+      <SettingItem inputType="color" label="Text color" propKey="textColor" />
+      <SettingItem
+        inputType="color"
+        label="Background Color"
+        propKey="backgroundColor"
+      />
+      <SettingItem
+        inputType="color"
+        label="Border Color"
+        propKey="borderColor"
+      />
+      <SettingItem
+        defaultValue={["0", "10", "0", "10"]}
+        inputType="numbers"
+        label="Padding"
+        propKey="padding"
+      />
+      <SettingItem
+        defaultValue={["5", "0", "5", "0"]}
+        inputType="numbers"
+        label="Margin"
+        propKey="margin"
+      />
+      <SettingItem
+        defaultValue={400}
+        inputType="radio"
+        label="Font Weight"
+        options={[
+          { value: 400, label: "Default" },
+          { value: 500, label: "Medium" },
+          { value: 600, label: "Bold" },
+        ]}
+        propKey="fontWeight"
+      />
     </Box>
   );
 }

@@ -22,7 +22,7 @@ export function SettingsPanel(): React.JSX.Element | null {
   });
 
   return selected ? (
-    <Flex direction="column">
+    <Flex className="pt-3 p-4" direction="column">
       <Text>Settings</Text>
       {createElement(selected.settings)}
       {selected.isDeletable ? (

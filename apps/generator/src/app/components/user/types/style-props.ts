@@ -10,6 +10,7 @@ export interface StyleProps {
   //padding props
   paddingX?: string; //TODO: We should also support individual padding values, like we have done for the margins.
   paddingY?: string;
+  padding?: string[];
 
   //border props
   borderRadius?: string;
@@ -20,4 +21,5 @@ export interface StyleProps {
   marginRight?: string;
   marginBottom?: string;
   marginLeft?: string;
+  margin?: string[];
 }

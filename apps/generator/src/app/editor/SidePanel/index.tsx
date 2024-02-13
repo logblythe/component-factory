@@ -2,7 +2,7 @@ import { Layers } from "@craftjs/layers";
 import { GearIcon, LayersIcon, PlusCircledIcon } from "@radix-ui/react-icons";
 import React from "react";
 import { Tab } from "../../components/primitives/tabs";
-import { SettingsPanel } from "../../components/SettingsPanel";
+import { SettingsPanel } from "../../components/settings-panel";
 import { Toolbox } from "../../components/Toolbox";
 
 const tabs = [

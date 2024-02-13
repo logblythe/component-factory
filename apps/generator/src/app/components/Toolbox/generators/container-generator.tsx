@@ -13,11 +13,7 @@ export function ContainerGenerator(): React.JSX.Element {
       ref={(ref) =>
         create(
           ref as HTMLElement,
-          <Element
-            canvas
-            className="border flex flex-row p-4 gap-4"
-            is={Container}
-          />
+          <Element canvas className="flex flex-row" is={Container} />
         )
       }
     >

@@ -17,10 +17,10 @@ export function Button({ text, ...rest }: PropTypes): React.JSX.Element {
   const {
     fontSize,
     fontWeight,
+    // padding,
+    // margin,
     textColor,
     backgroundColor,
-    paddingX,
-    paddingY,
     borderRadius,
     borderColor,
     ...otherProps
@@ -30,12 +30,10 @@ export function Button({ text, ...rest }: PropTypes): React.JSX.Element {
     <button
       ref={(ref) => connect(drag(ref as HTMLElement))}
       style={{
+        // padding: padding?.map((value) => `${value}px`).join(" ") ?? "0 10px",
+        // margin: margin?.map((value) => `${value}px`).join(" ") ?? "5px 0",
         borderRadius: `${borderRadius}px`,
         border: `2px solid ${borderColor}`,
-        paddingTop: `${paddingY}px`,
-        paddingRight: `${paddingX}px`,
-        paddingBottom: `${paddingY}px`,
-        paddingLeft: `${paddingX}px`,
         color: `${textColor}`,
         backgroundColor: `${backgroundColor}`,
         fontSize: `${fontSize}px`,

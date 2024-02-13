@@ -1,11 +1,10 @@
 import { useEditor, useNode } from "@craftjs/core";
-import type { Text as RadixText } from "@radix-ui/themes";
 import React from "react";
 import ContentEditable from "react-contenteditable";
 import type { StyleProps } from "../types";
 import { Settings } from "./settings";
 
-export type PropTypes = React.ComponentProps<typeof RadixText> &
+export type PropTypes = React.ComponentProps<"div"> &
   StyleProps & {
     text: string;
   };
@@ -21,10 +20,8 @@ export function Text({ text, ...rest }: PropTypes): React.JSX.Element {
   }));
 
   const {
-    marginTop,
-    marginRight,
-    marginLeft,
-    marginBottom,
+    padding,
+    margin,
     textColor,
     fontWeight,
     fontSize,
@@ -40,10 +37,8 @@ export function Text({ text, ...rest }: PropTypes): React.JSX.Element {
         setProp((prop) => (prop.text = e.target.value), 500);
       }} // use true to disable editing
       style={{
-        marginTop: `${marginTop}px`,
-        marginRight: `${marginRight}px`,
-        marginBottom: `${marginBottom}px`,
-        marginLeft: `${marginLeft}px`,
+        padding: padding?.map((value) => `${value}px`).join(" ") ?? 0,
+        margin: margin?.map((value) => `${value}px`).join(" ") ?? 0,
         color: `${textColor}`,
         fontSize: `${fontSize}px`,
         fontWeight,

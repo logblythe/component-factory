@@ -46,6 +46,39 @@ export function Settings(): React.ReactElement {
           propKey="justifyContent"
         />
       </Box>
+      <Box>
+        <SettingItem
+          inputType="color"
+          label="Border Color"
+          propKey="borderColor"
+        />
+        <SettingItem
+          inputType="number"
+          label="Border Radius"
+          propKey="borderRadius"
+        />
+      </Box>
+      <Box>
+        <SettingItem
+          defaultValue={["0", "10", "0", "10"]}
+          inputType="numbers"
+          label="Padding"
+          propKey="padding"
+        />
+        <SettingItem
+          defaultValue={["5", "0", "5", "0"]}
+          inputType="numbers"
+          label="Margin"
+          propKey="margin"
+        />
+      </Box>
+      <Box>
+        <SettingItem
+          inputType="color"
+          label="Background Color"
+          propKey="backgroundColor"
+        />
+      </Box>
     </Flex>
   );
 }
